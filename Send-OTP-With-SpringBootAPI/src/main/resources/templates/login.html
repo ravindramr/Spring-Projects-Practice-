@@ -1,0 +1,66 @@
+<!-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%> -->
+<!-- 	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book Show</title>
+
+<link rel="stylesheet" type="text/css" href="/style.css" />
+
+
+</head>
+
+<body>
+	<script>
+		function validateMobile() {
+			var mobilenumber = document.getElementById("mobilenumber").value;
+			var mobilelength = /^(\+91-|\+91|0)?\d{10}$/;
+			if (mobilenumber.match(mobilelength)) {
+				alert("OTP successfully sended to your Mobile number");
+				document.getElementById("focus").focus();
+				return true;
+			} else {
+				alert("Invalid Mobile Number");
+				return false;
+			}
+		}
+
+		function validateOTP() {
+			var otpvalue = document.getElementById("otp").value;
+			var otplength = /^\d{6}$/;
+			if (otpvalue.match(otplength)) {
+				alert("OTP Validation successful");
+				return true;
+			} else {
+				alert("Invalid OTP");
+				return false;
+			}
+		}
+	</script>
+
+	<!-- partial:index.partial.html -->
+	<div class="login-form">
+		<h1>Login With Mobile Number</h1>
+		<form modelAttribute="mobileNo" method="POST" action="getmobile"
+			onsubmit="validateMobile()">
+			<input type="text" id="mobilenumber" name="phoneNo"
+				placeholder="Enter Mobile Number" /> <br /> <br /> <input type="submit"
+				value="generate OTP" /> <input type="submit" value="Re-Send OTP" />
+		</form>
+		<br />
+		<form modelAttribute="mobileNo" method="POST" action="otp"
+			onsubmit="validateOTP()">
+			<div class="input-field">
+				<input type="text" id="otp" name="otp" path="otp"
+					placeholder="Enter OTP" autocomplete="new-password" required>
+				<input type="submit" value="verify OTP" />
+			</div>
+			<br>
+		</form>
+	</div>
+</body>
+</html>

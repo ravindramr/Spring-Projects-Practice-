@@ -1,0 +1,44 @@
+body {
+	text-align: center;
+	background: #e2e2e2;
+	border: 12px solid powderblue;
+	padding: 5px 10px;
+}
+
+.login-form h2 {
+	font-size: 20px;
+	border: 2px;
+	color: solid powderblue;
+	margin: 5px;
+	padding: 5px 10px;
+}
+
+input[type=submit] {
+	width: 20%;
+	background-color: LightGray;
+	color: white;
+	padding: 5px 10px;
+	margin: 5px 25px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #000080;
+}
+
+input {
+	width: 50%;
+	background-color: LightGray;
+	color: white;
+	padding: 5px 10px;
+	margin: 4px 0;
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+input:hover {
+	background-color: #ffffff;
+}
